@@ -16,6 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@600;700;800&family=Libre+Baskerville:ital@0;1&family=Manrope:wght@500;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -36,17 +37,22 @@
       <div class="contact-hero__copy">
         <p class="eyebrow">Reader contact</p>
         <h1 id="contact-title">Send David a note from the front.</h1>
-        <p class="dek">Questions, reader mail, favorite war crimes committed by fictional empires — send them here. This page opens your email app and addresses the message to David automatically.</p>
+        <p class="dek">Questions, reader mail, favorite war crimes committed by fictional empires — send them here. This form sends your message directly to David without exposing the inbox to spam bots.</p>
       </div>
 
-      <form class="contact-card" id="contact-form" aria-label="Email David Beers">
+      <form class="contact-card" id="contact-form" data-contact-form aria-label="Email David Beers">
+        <input type="hidden" name="brand" value="David Beers" />
+        <label class="contact-card__trap" aria-hidden="true" tabindex="-1">
+          <span>Company</span>
+          <input name="company" type="text" autocomplete="off" tabindex="-1" />
+        </label>
         <label>
           <span>Your name</span>
-          <input name="name" type="text" autocomplete="name" placeholder="Commander Shepard" />
+          <input name="name" type="text" autocomplete="name" placeholder="Commander Shepard" required />
         </label>
         <label>
           <span>Your email</span>
-          <input name="email" type="email" autocomplete="email" placeholder="you@example.com" />
+          <input name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
         </label>
         <label>
           <span>Subject</span>
@@ -54,10 +60,11 @@
         </label>
         <label>
           <span>Message</span>
-          <textarea name="message" rows="7" placeholder="Tell David what you want him to know."></textarea>
+          <textarea name="message" rows="7" placeholder="Tell David what you want him to know." required></textarea>
         </label>
-        <button class="button button--primary" type="submit">Open email app</button>
-        <p class="contact-card__note">If the button does not open your email app, write directly to <a href="mailto:david@imperiumdominion.org">david@imperiumdominion.org</a>.</p>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAADInfxBcLDhLz5x-"></div>
+        <button class="button button--primary" type="submit">Send message</button>
+        <p class="contact-card__note" data-contact-status role="status">Protected by Cloudflare Turnstile. If the form gets weird, write directly to <a href="mailto:david@imperiumdominion.org">david@imperiumdominion.org</a>.</p>
       </form>
     </section>
   </main>

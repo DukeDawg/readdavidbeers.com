@@ -603,3 +603,22 @@ footer a:hover { color: var(--ember); }
   .mini-card { grid-template-columns: 6.5rem minmax(0, 1fr); }
   footer { flex-direction: column; }
 }
+
+
+.contact-card__trap {
+  position: absolute;
+  left: -100vw;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contact-card button[disabled], .signup-form button[disabled] {
+  cursor: wait;
+  opacity: .68;
+  transform: none;
+}
+
+.cf-turnstile {
+  min-height: 65px;
+}

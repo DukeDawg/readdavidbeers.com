@@ -1,30 +1,32 @@
 const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
 
-const contactForm = document.querySelector('#contact-form');
+const contactForm = document.querySelector('[data-contact-form]');
 if (contactForm) {
-  contactForm.addEventListener('submit', (event) => {
+  const status = contactForm.querySelector('[data-contact-status]');
+  const button = contactForm.querySelector('button[type="submit"]');
+
+  contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
+    if (status) status.textContent = 'Sending message…';
+    if (button) button.disabled = true;
 
-    const form = new FormData(contactForm);
-    const name = String(form.get('name') || '').trim();
-    const email = String(form.get('email') || '').trim();
-    const subject = String(form.get('subject') || 'Reader message for David Beers').trim();
-    const message = String(form.get('message') || '').trim();
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: new FormData(contactForm)
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || !result.ok) throw new Error(result.error || 'Message failed.');
 
-    const body = [
-      message,
-      '',
-      name ? `Name: ${name}` : '',
-      email ? `Reply-to: ${email}` : ''
-    ].filter(Boolean).join('\n');
-
-    const params = new URLSearchParams({
-      subject: subject || 'Reader message for David Beers',
-      body
-    });
-
-    window.location.href = `mailto:david@imperiumdominion.org?${params.toString()}`;
+      contactForm.reset();
+      if (window.turnstile) window.turnstile.reset();
+      if (status) status.textContent = 'Message sent. David has it.';
+    } catch (error) {
+      if (status) status.textContent = error.message || 'Message could not be sent. Please email David directly.';
+    } finally {
+      if (button) button.disabled = false;
+    }
   });
 }
 
