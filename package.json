@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "check": "python3 -m http.server 4173 --directory public"
+    "check": "python3 -m http.server 4173 --directory public",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.87.0"
   }
 }
