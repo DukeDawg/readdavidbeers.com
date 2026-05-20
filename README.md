@@ -9,6 +9,16 @@ Official David Beers author site. Static-first build for Cloudflare Pages.
 - Build output directory: `public`
 - Production branch: `main`
 
+## MailerLite reader-list signup
+
+The homepage reader-list signup form posts directly to MailerLite's embedded webform endpoint:
+
+- Form container: `mlb2-41523129`
+- Account path: `2307208`
+- Form ID: `187925613909116238`
+- Action: `https://assets.mailerlite.com/jsonp/2307208/forms/187925613909116238/subscribe`
+
+The public form intentionally keeps only the email field and MailerLite's required hidden fields: `ml-submit=1` and `anticsrf=true`. The site's own `script.js` submits the form with `fetch()`, displays MailerLite validation errors inline, and calls `ml_webform_success_41523129()` on success so the success state can use the site's own styling instead of MailerLite's bulky default embed CSS.
 
 ## Contact form wiring
 
