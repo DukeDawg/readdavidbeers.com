@@ -674,3 +674,121 @@ footer a:hover { color: var(--ember); }
 .cf-turnstile {
   min-height: 65px;
 }
+
+.compact-header {
+  position: relative;
+}
+
+.reader-page {
+  min-height: 100vh;
+}
+
+.reader-landing {
+  min-height: calc(100vh - 4.2rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(19rem, .55fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+  padding: clamp(4rem, 9vw, 8rem) clamp(1.25rem, 5vw, 5rem) clamp(4rem, 7vw, 6rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.reader-landing::after {
+  content: "READER LIST";
+  position: absolute;
+  right: -3vw;
+  bottom: -1.25rem;
+  color: rgba(255, 244, 234, 0.036);
+  font-family: var(--serif);
+  font-size: clamp(4.5rem, 13vw, 13rem);
+  font-weight: 800;
+  letter-spacing: -0.08em;
+  line-height: .75;
+  pointer-events: none;
+}
+
+.reader-landing__copy,
+.reader-landing__card {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.reader-landing h1 {
+  max-width: 10ch;
+}
+
+.reader-note {
+  max-width: 39rem;
+  color: var(--gold);
+  font-family: var(--quote);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.reader-landing__card {
+  background:
+    linear-gradient(135deg, rgba(184,45,36,.17), transparent 44%),
+    linear-gradient(145deg, var(--panel-strong), rgba(255,255,255,.035));
+  border: 1px solid var(--line);
+  border-radius: 2rem;
+  box-shadow: var(--shadow);
+  padding: clamp(1.25rem, 3vw, 2.2rem);
+}
+
+.reader-card-label {
+  width: fit-content;
+  margin: 0 0 1.1rem;
+  border: 1px solid rgba(216, 168, 95, .48);
+  border-radius: 999px;
+  background: rgba(216, 168, 95, .1);
+  color: var(--gold);
+  padding: .42rem .65rem;
+  font-size: .74rem;
+  font-weight: 1000;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 980px) {
+  .reader-landing {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .reader-landing__card {
+    max-width: 34rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .reader-landing {
+    min-height: auto;
+    padding: 3rem 1.15rem 4rem;
+  }
+
+  .reader-landing__copy,
+  .reader-landing .dek,
+  .reader-note {
+    width: min(100%, 21.8rem);
+    max-width: 21.8rem;
+  }
+
+  .reader-landing h1 {
+    width: 100%;
+    max-width: 8.2em;
+    font-size: clamp(2.05rem, 9.5vw, 2.7rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  .reader-landing__card {
+    width: min(100%, 21.8rem);
+    max-width: 21.8rem;
+    border-radius: 1.4rem;
+  }
+}
