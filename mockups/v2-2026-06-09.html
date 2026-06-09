@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>David Beers | Military Sci-Fi & Space Opera — v2 mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@600;700;800&family=Libre+Baskerville:ital@0;1&family=Manrope:wght@500;700;800;900&display=swap" rel="stylesheet" />
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #07050a;
+  --bg-2: #0d0812;
+  --panel: rgba(255, 246, 237, 0.05);
+  --panel-strong: rgba(255, 246, 237, 0.09);
+  --ink: #f5efe6;
+  --muted: #beae9f;
+  --low: #8a7a6e;
+  --blood: #c4322a;
+  --blood-dark: #6d1a12;
+  --ember: #f08d43;
+  --gold: #d8a85f;
+  --line: rgba(255, 244, 234, 0.13);
+  --line-strong: rgba(255, 244, 234, 0.26);
+  --serif: "Eczar", Georgia, serif;
+  --body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --quote: "Libre Baskerville", Georgia, serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; overflow-x: hidden;
+  font-family: var(--body); color: var(--ink);
+  background:
+    radial-gradient(ellipse at 70% -8%, rgba(196, 50, 42, 0.28), transparent 42rem),
+    radial-gradient(ellipse at 8% 30%, rgba(240, 141, 67, 0.07), transparent 30rem),
+    linear-gradient(170deg, #0a060d 0%, var(--bg) 40%, #0c0709 100%);
+}
+/* starfield */
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1;
+  background-image:
+    radial-gradient(1px 1px at 12% 22%, rgba(255,255,255,.5), transparent),
+    radial-gradient(1px 1px at 34% 8%, rgba(255,255,255,.35), transparent),
+    radial-gradient(1.5px 1.5px at 58% 31%, rgba(255,224,180,.45), transparent),
+    radial-gradient(1px 1px at 73% 12%, rgba(255,255,255,.4), transparent),
+    radial-gradient(1px 1px at 88% 40%, rgba(255,255,255,.3), transparent),
+    radial-gradient(1.5px 1.5px at 22% 64%, rgba(255,255,255,.28), transparent),
+    radial-gradient(1px 1px at 47% 80%, rgba(255,224,180,.3), transparent),
+    radial-gradient(1px 1px at 80% 72%, rgba(255,255,255,.32), transparent),
+    radial-gradient(1px 1px at 64% 56%, rgba(255,255,255,.22), transparent),
+    radial-gradient(1px 1px at 5% 88%, rgba(255,255,255,.25), transparent);
+  opacity: .8;
+}
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+h1,h2,h3,p { margin-top: 0; }
+h1,h2,h3 { font-family: var(--serif); letter-spacing: -0.04em; }
+
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+  padding: .95rem clamp(1rem, 4vw, 3.5rem);
+  background: rgba(7, 5, 10, 0.78); border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(18px);
+}
+.brand { font-family: var(--serif); text-decoration: none; font-weight: 800; letter-spacing: -0.02em; font-size: 1.3rem; }
+.brand span { color: var(--ember); }
+nav { display: flex; gap: 1.6rem; color: var(--muted); font-size: .82rem; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; align-items: center; }
+nav a { text-decoration: none; }
+nav a:hover { color: var(--ember); }
+.nav-cta {
+  border: 1px solid rgba(240,141,67,.5); border-radius: 999px;
+  padding: .5rem .95rem; color: var(--ink);
+  background: rgba(196,50,42,.18);
+}
+
+/* ============ HERO ============ */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(26rem, .92fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  padding: clamp(3.5rem, 6.5vw, 6rem) clamp(1.25rem, 5vw, 5rem) clamp(3rem, 5vw, 4.5rem);
+  position: relative; overflow: hidden;
+}
+.eyebrow {
+  display: inline-flex; align-items: center; gap: .55rem;
+  margin: 0 0 1.2rem; color: var(--ember);
+  text-transform: uppercase; letter-spacing: .2em; font-size: .74rem; font-weight: 900;
+}
+.eyebrow::before { content: ""; width: 2.2rem; height: 1px; background: var(--ember); }
+.hero h1 {
+  font-size: clamp(3rem, 5.6vw, 5.4rem);
+  line-height: .94; margin-bottom: 1.3rem; max-width: 14ch;
+}
+.hero h1 em { font-style: normal; color: transparent; -webkit-text-stroke: 1.5px rgba(245,239,230,.75); }
+.dek { color: var(--muted); font-size: clamp(1.05rem, 1.6vw, 1.22rem); line-height: 1.7; max-width: 38rem; margin-bottom: 1.6rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .85rem; margin-bottom: 1.6rem; }
+.button {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  border-radius: .65rem; padding: .95rem 1.5rem; min-height: 3.1rem;
+  text-decoration: none; font-weight: 900; font-size: .98rem;
+  border: 1px solid var(--line-strong);
+  transition: transform .2s ease, border-color .2s ease;
+}
+.button:hover { transform: translateY(-2px); border-color: rgba(240,141,67,.7); }
+.button--primary {
+  background: linear-gradient(135deg, var(--blood), var(--blood-dark));
+  border-color: rgba(196,50,42,.6);
+  box-shadow: 0 1rem 2.6rem rgba(196, 45, 36, .35);
+}
+.button--ghost { background: rgba(255,255,255,.045); }
+.hero-proof { display: flex; align-items: center; gap: 1rem; color: var(--muted); font-size: .92rem; font-weight: 700; }
+.stars { color: var(--gold); letter-spacing: .12em; font-size: 1rem; }
+.hero-proof b { color: var(--ink); }
+.ku-pill {
+  display: inline-flex; align-items: center; gap: .45rem; width: fit-content;
+  margin: 0 0 1.1rem; border: 1px solid rgba(216,168,95,.5); border-radius: 999px;
+  background: rgba(216,168,95,.1); color: var(--gold);
+  padding: .45rem .8rem; font-size: .74rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase;
+}
+.ku-pill::before { content: "✓"; font-size: .8rem; }
+
+/* cover showcase */
+.showcase { position: relative; min-height: clamp(30rem, 42vw, 40rem); }
+.showcase::before {
+  content: ""; position: absolute; inset: 8% -6% -10% -6%;
+  background: radial-gradient(ellipse at 50% 60%, rgba(196,50,42,.3), transparent 68%);
+  filter: blur(8px);
+}
+.shot { position: absolute; border-radius: .55rem; overflow: hidden;
+  border: 1px solid rgba(255,255,255,.2);
+  box-shadow: 0 2.4rem 5rem rgba(0,0,0,.65);
+}
+.shot img { height: 100%; width: 100%; object-fit: cover; }
+.shot--main {
+  width: clamp(17rem, 24vw, 23rem); aspect-ratio: 2/3;
+  left: 50%; top: 50%; transform: translate(-50%, -50%);
+  z-index: 3; box-shadow: 0 2.6rem 6rem rgba(0,0,0,.7), 0 0 5rem rgba(240,141,67,.22);
+}
+.shot--l { width: clamp(11rem, 15vw, 14.5rem); aspect-ratio: 2/3; left: 0; top: 8%; transform: rotate(-9deg); z-index: 2; opacity: .9; }
+.shot--r { width: clamp(11rem, 15vw, 14.5rem); aspect-ratio: 2/3; right: 0; bottom: 4%; transform: rotate(8deg); z-index: 2; opacity: .9; }
+.showcase-tag {
+  position: absolute; z-index: 4; left: 50%; bottom: -1.1rem; transform: translateX(-50%);
+  white-space: nowrap; border-radius: 999px;
+  background: linear-gradient(135deg, #ffd892, var(--ember)); color: #160904;
+  box-shadow: 0 1rem 2.4rem rgba(0,0,0,.5);
+  padding: .65rem 1.1rem; font-size: .76rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase;
+}
+
+/* review ticker band */
+.quote-band {
+  border-block: 1px solid var(--line);
+  background: rgba(255,244,234,.035);
+  display: grid; grid-template-columns: repeat(3, 1fr);
+}
+.quote-band blockquote {
+  margin: 0; padding: 1.6rem clamp(1.25rem, 3vw, 2.5rem);
+  border-right: 1px solid var(--line);
+  font-family: var(--quote); font-style: italic;
+  color: var(--muted); font-size: .98rem; line-height: 1.6;
+}
+.quote-band blockquote:last-child { border-right: 0; }
+.quote-band cite { display: block; margin-top: .7rem; font-style: normal; font-family: var(--body); font-weight: 800; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+.quote-band .q-stars { display: block; color: var(--gold); margin-bottom: .5rem; letter-spacing: .14em; font-style: normal; }
+
+/* sections */
+.section { padding: clamp(4.5rem, 7.5vw, 7.5rem) clamp(1.25rem, 5vw, 5rem); }
+.wrap { max-width: 82rem; margin: 0 auto; }
+.section__intro { max-width: 82rem; margin: 0 auto clamp(2.2rem, 4vw, 3.5rem); }
+.section h2 { font-size: clamp(2.3rem, 4.4vw, 4rem); line-height: .98; margin-bottom: .9rem; }
+.section__intro p { color: var(--muted); font-size: clamp(1.02rem, 1.5vw, 1.18rem); line-height: 1.7; max-width: 46rem; }
+
+/* reading path */
+.path-grid { max-width: 82rem; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; counter-reset: step; }
+.path-card {
+  position: relative; counter-increment: step;
+  background: linear-gradient(160deg, var(--panel-strong), rgba(255,255,255,.02));
+  border: 1px solid var(--line); border-radius: 1.1rem;
+  padding: 1.5rem; overflow: hidden;
+  display: grid; grid-template-rows: auto auto 1fr auto; gap: .6rem;
+}
+.path-card::before {
+  content: "0" counter(step);
+  position: absolute; right: .9rem; top: .4rem;
+  font-family: var(--serif); font-weight: 800; font-size: 3.4rem;
+  color: rgba(240,141,67,.14); line-height: 1;
+}
+.path-card .cover-row { display: flex; gap: .9rem; align-items: flex-start; }
+.path-card .cover-row img, .ph-cover { width: 7rem; aspect-ratio: 2/3; object-fit: cover; border-radius: .4rem; border: 1px solid var(--line-strong); box-shadow: 0 1rem 2.2rem rgba(0,0,0,.5); }
+.path-card .label { color: var(--ember); font-size: .72rem; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; margin: 0 0 .35rem; }
+.path-card h3 { font-size: 1.6rem; line-height: 1; margin-bottom: .35rem; }
+.path-card p { color: var(--muted); font-size: .95rem; line-height: 1.6; margin: 0; }
+.path-card .meta { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .2rem; }
+.path-card .meta span { border: 1px solid var(--line); border-radius: 999px; padding: .3rem .6rem; font-size: .74rem; font-weight: 800; color: var(--muted); }
+.path-card .meta .hot { color: var(--gold); border-color: rgba(216,168,95,.5); }
+.text-link { color: var(--ink); font-weight: 900; text-decoration-color: rgba(240,141,67,.55); text-underline-offset: .22rem; font-size: .95rem; }
+.text-link:hover { color: var(--ember); }
+
+/* series shelves */
+.shelf { max-width: 82rem; margin: 0 auto; display: grid; gap: 1.1rem; }
+.shelf-card {
+  display: grid; grid-template-columns: 11rem minmax(0, 1fr) auto;
+  gap: clamp(1.2rem, 3vw, 2.4rem); align-items: center;
+  background: linear-gradient(160deg, var(--panel-strong), rgba(255,255,255,.02));
+  border: 1px solid var(--line); border-radius: 1.2rem;
+  padding: clamp(1.1rem, 2.4vw, 1.7rem);
+}
+.shelf-card img, .shelf-card .ph-cover { width: 100%; aspect-ratio: 2/3; object-fit: cover; border-radius: .5rem; border: 1px solid var(--line-strong); box-shadow: 0 1.2rem 2.6rem rgba(0,0,0,.5); }
+.kicker { color: var(--gold); font-size: .72rem; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; margin: 0 0 .5rem; }
+.shelf-card h3 { font-size: clamp(1.7rem, 2.6vw, 2.3rem); margin-bottom: .4rem; }
+.shelf-card .desc { color: var(--muted); line-height: 1.65; font-size: .98rem; max-width: 46rem; margin-bottom: .8rem; }
+.shelf-card .books { display: flex; flex-wrap: wrap; gap: .45rem; }
+.shelf-card .books a {
+  text-decoration: none; font-weight: 800; font-size: .82rem; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 999px; padding: .42rem .75rem;
+}
+.shelf-card .books a:hover { color: var(--ember); border-color: rgba(240,141,67,.6); }
+.shelf-card .books a b { color: var(--ember); margin-right: .35rem; }
+.shelf-cta { display: grid; gap: .6rem; justify-items: stretch; min-width: 12.5rem; }
+.shelf-cta .stat { text-align: center; color: var(--muted); font-size: .82rem; font-weight: 800; }
+.shelf-cta .stat b { display: block; font-family: var(--serif); font-size: 1.6rem; color: var(--ink); }
+.ph-cover {
+  display: grid; place-items: center; text-align: center; padding: .8rem;
+  background: linear-gradient(160deg, #2a1410, #120a14 60%, #1c0d0a);
+  color: var(--gold); font-family: var(--serif); font-weight: 700; font-size: .95rem; line-height: 1.25;
+}
+.ph-cover small { display: block; margin-top: .5rem; color: var(--low); font-family: var(--body); font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 800; }
+
+/* big pull quote */
+.pull {
+  border-block: 1px solid var(--line);
+  background:
+    radial-gradient(ellipse at 50% 120%, rgba(196,50,42,.22), transparent 60%),
+    rgba(255,244,234,.025);
+  text-align: center; padding: clamp(4rem, 7vw, 6.5rem) clamp(1.25rem, 5vw, 5rem);
+}
+.pull blockquote { margin: 0 auto; max-width: 52rem; font-family: var(--quote); font-style: italic; font-size: clamp(1.35rem, 2.6vw, 2rem); line-height: 1.5; color: var(--ink); }
+.pull .q-stars { display: block; color: var(--gold); letter-spacing: .2em; margin-bottom: 1.2rem; font-size: 1.1rem; }
+.pull cite { display: block; margin-top: 1.4rem; font-style: normal; font-family: var(--body); font-weight: 800; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+
+/* about */
+.about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, .5fr); gap: clamp(2rem, 5vw, 4rem); max-width: 82rem; margin: 0 auto; align-items: center; }
+.about p { color: var(--muted); font-family: var(--quote); font-size: clamp(1.02rem, 1.6vw, 1.2rem); line-height: 1.8; max-width: 44rem; }
+.about-portrait {
+  aspect-ratio: 4/5; border-radius: 1.2rem; border: 1px solid var(--line-strong);
+  background: linear-gradient(160deg, #261410, #0d0812 70%);
+  display: grid; place-items: center; color: var(--low);
+  font-size: .78rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; text-align: center; padding: 1rem;
+  box-shadow: 0 1.6rem 4rem rgba(0,0,0,.5);
+}
+
+/* newsletter */
+.newsletter {
+  max-width: 76rem; margin: 0 auto clamp(4rem, 7vw, 6rem);
+  border: 1px solid rgba(216,168,95,.32); border-radius: 1.4rem;
+  background:
+    radial-gradient(ellipse at 85% -20%, rgba(240,141,67,.18), transparent 55%),
+    linear-gradient(160deg, var(--panel-strong), rgba(255,255,255,.02));
+  padding: clamp(2rem, 4.5vw, 3.5rem);
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(20rem, .66fr); gap: 2.5rem; align-items: center;
+  box-shadow: 0 2rem 5rem rgba(0,0,0,.45);
+}
+.newsletter h2 { font-size: clamp(2rem, 3.6vw, 3.1rem); }
+.newsletter p { color: var(--muted); line-height: 1.7; }
+.signup { display: grid; gap: .8rem; }
+.signup input {
+  width: 100%; border: 1px solid var(--line-strong); border-radius: .65rem;
+  background: rgba(5,3,2,.55); color: var(--ink);
+  font: 700 1rem/1.45 var(--body); padding: 1rem 1.1rem; outline: none;
+}
+.signup .button { width: 100%; }
+.form-note { color: var(--low); font-size: .85rem; margin: 0; }
+
+footer {
+  padding: 2rem clamp(1.25rem, 5vw, 5rem) 3rem; color: var(--low);
+  display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--line); font-size: .92rem;
+}
+footer p { margin: 0; }
+
+@media (max-width: 980px) {
+  .hero, .about, .newsletter { grid-template-columns: 1fr; }
+  .quote-band, .path-grid { grid-template-columns: 1fr; }
+  .quote-band blockquote { border-right: 0; border-bottom: 1px solid var(--line); }
+  .shelf-card { grid-template-columns: 8.5rem minmax(0, 1fr); }
+  .shelf-cta { grid-column: 1 / -1; grid-template-columns: 1fr auto; align-items: center; }
+  .showcase { min-height: 30rem; max-width: 36rem; margin-inline: auto; width: 100%; }
+}
+@media (max-width: 700px) {
+  nav { display: none; }
+  .hero { padding-top: 2.2rem; }
+  .showcase { order: -1; min-height: 24rem; }
+  .shot--main { width: clamp(13rem, 52vw, 16rem); }
+  .shot--l, .shot--r { width: clamp(7.5rem, 28vw, 9.5rem); }
+  .hero h1 { font-size: clamp(2.3rem, 9vw, 3rem); }
+  .shelf-card { grid-template-columns: 1fr; }
+  .shelf-card img, .shelf-card .ph-cover { max-width: 11rem; }
+  footer { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="#">David <span>Beers</span></a>
+  <nav>
+    <a href="#start">Start Here</a>
+    <a href="#series">Series</a>
+    <a href="#about">About</a>
+    <a href="#">Contact</a>
+    <a class="nav-cta" href="#newsletter">Join the Reader List</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Military Sci-Fi · Space Opera</p>
+      <h1>The empire has opinions. <em>The rebellion has guns.</em></h1>
+      <p class="ku-pill">Every series free in Kindle Unlimited</p>
+      <p class="dek">War machines, fallen empires, and soldiers who keep fighting after surrender stops being an option. Complete series, fast campaigns, galaxy-scale consequences.</p>
+      <div class="actions">
+        <a class="button button--primary" href="#start">Start the Saga →</a>
+        <a class="button button--ghost" href="#series">Browse All Series</a>
+      </div>
+      <div class="hero-proof">
+        <span class="stars">★★★★★</span>
+        <span><b>4.6</b> average · <b>2,000+</b> ratings across the catalog · <b>70+</b> titles</span>
+      </div>
+    </div>
+    <div class="showcase">
+      <div class="shot shot--l"><img src="https://m.media-amazon.com/images/I/81Nu5gb23hL._SY466_.jpg" alt="Warlord Born cover" /></div>
+      <div class="shot shot--main"><img src="https://m.media-amazon.com/images/I/81rrf22PX4L._SY466_.jpg" alt="Warlords & War Machines cover" /></div>
+      <div class="shot shot--r"><img src="https://m.media-amazon.com/images/I/81GMDCG0yIL._SY466_.jpg" alt="Shadow Contract cover" /></div>
+      <span class="showcase-tag">Read Free in Kindle Unlimited</span>
+    </div>
+  </section>
+
+  <section class="quote-band" aria-label="Reader reviews">
+    <blockquote><span class="q-stars">★★★★★</span>“Couldn't put it down. The battles feel earned and the losses actually hurt.”<cite>— Amazon reviewer, Warlords & War Machines</cite></blockquote>
+    <blockquote><span class="q-stars">★★★★★</span>“If you loved Red Rising's scale, this scratches the same itch with a meaner edge.”<cite>— Amazon reviewer, The Great Insurrection</cite></blockquote>
+    <blockquote><span class="q-stars">★★★★★</span>“Binged all nine books in two weeks. Send help. Or book ten.”<cite>— Amazon reviewer, The Great Insurrection</cite></blockquote>
+  </section>
+
+  <section class="section" id="start">
+    <div class="section__intro">
+      <p class="eyebrow">Start Here</p>
+      <h2>Three doors into the war.</h2>
+      <p>New here? Pick by appetite — the all-in bundle, the flagship nine-book campaign, or a tight trilogy you can finish in a weekend.</p>
+    </div>
+    <div class="path-grid">
+      <article class="path-card">
+        <div class="cover-row"><img src="https://m.media-amazon.com/images/I/81rrf22PX4L._SY466_.jpg" alt="Warlords & War Machines cover" /></div>
+        <div>
+          <p class="label">The Big Bundle</p>
+          <h3>Warlords & War Machines</h3>
+          <p>One purchase, a complete military sci-fi epic. The deepest value-per-page door on the shelf.</p>
+        </div>
+        <div class="meta"><span>4.6★ · 581 reviews</span><span class="hot">Free in KU</span></div>
+        <a class="text-link" href="#">Read the bundle →</a>
+      </article>
+      <article class="path-card">
+        <div class="cover-row"><img src="https://m.media-amazon.com/images/I/81Nu5gb23hL._SY466_.jpg" alt="Warlord Born cover" /></div>
+        <div>
+          <p class="label">The Flagship Series</p>
+          <h3>Warlord Born</h3>
+          <p>Book 1 of The Great Insurrection — nine books of escalating rebellion. The series readers binge hardest.</p>
+        </div>
+        <div class="meta"><span>Book 1 of 9</span><span class="hot">Free in KU</span></div>
+        <a class="text-link" href="#">Start Book 1 →</a>
+      </article>
+      <article class="path-card">
+        <div class="cover-row"><img src="https://m.media-amazon.com/images/I/81GMDCG0yIL._SY466_.jpg" alt="Shadow Contract cover" /></div>
+        <div>
+          <p class="label">The Weekend Trilogy</p>
+          <h3>Shadow Contract</h3>
+          <p>The Hunter trilogy — darker, tighter, finishable in a weekend. Low commitment, full payoff.</p>
+        </div>
+        <div class="meta"><span>Book 1 of 3</span><span class="hot">Free in KU</span></div>
+        <a class="text-link" href="#">Start the trilogy →</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="series" style="padding-top: 0;">
+    <div class="section__intro">
+      <p class="eyebrow">Books & Series</p>
+      <h2>The full armory.</h2>
+      <p>Every series, in reading order, with a one-click door into Book 1. Choose your warfront.</p>
+    </div>
+    <div class="shelf">
+      <article class="shelf-card">
+        <img src="https://m.media-amazon.com/images/I/81Nu5gb23hL._SY466_.jpg" alt="Warlord Born cover" />
+        <div>
+          <p class="kicker">Military Sci-Fi · 9 Books · Complete</p>
+          <h3>The Great Insurrection</h3>
+          <p class="desc">Alexander the Great reborn among the stars. A nine-book warpath of rebellion against an empire that thought it had already won.</p>
+          <div class="books">
+            <a href="#"><b>01</b>Warlord Born</a><a href="#"><b>02</b>Warlord Rising</a><a href="#"><b>03</b>Warlord Conquering</a><a href="#"><b>04</b>Prometheus Wakes</a><a href="#">+5 more</a>
+          </div>
+        </div>
+        <div class="shelf-cta">
+          <div class="stat"><b>9</b>books</div>
+          <a class="button button--primary" href="#">Start Book 1</a>
+          <a class="text-link" style="text-align:center" href="#">Get the box set →</a>
+        </div>
+      </article>
+      <article class="shelf-card">
+        <img src="https://m.media-amazon.com/images/I/81GMDCG0yIL._SY466_.jpg" alt="Shadow Contract cover" />
+        <div>
+          <p class="kicker">Dark Action · 3 Books · Complete</p>
+          <h3>The Hunter</h3>
+          <p class="desc">A tight, brutal trilogy. Start at <em>Shadow Contract</em>, end at <em>A Light Reborn</em>, sleep when it's over.</p>
+          <div class="books">
+            <a href="#"><b>01</b>Shadow Contract</a><a href="#"><b>02</b>Twilight's Allegiance</a><a href="#"><b>03</b>A Light Reborn</a>
+          </div>
+        </div>
+        <div class="shelf-cta">
+          <div class="stat"><b>3</b>books</div>
+          <a class="button button--primary" href="#">Start Book 1</a>
+        </div>
+      </article>
+      <article class="shelf-card">
+        <div class="ph-cover">Heretic<small>cover art</small></div>
+        <div>
+          <p class="kicker">Sci-Fi Saga · 7 Books · Complete</p>
+          <h3>The Singularity</h3>
+          <p class="desc">Seven books of futuristic conflict anchored by <em>Heretic</em> — the catalog's biggest review footprint at 1,400+ ratings.</p>
+          <div class="books">
+            <a href="#"><b>01</b>Heretic</a><a href="#"><b>02</b>Traitor</a><a href="#"><b>03</b>Emissaries</a><a href="#"><b>04</b>Revolutionary</a><a href="#">+3 more</a>
+          </div>
+        </div>
+        <div class="shelf-cta">
+          <div class="stat"><b>1,400+</b>reviews</div>
+          <a class="button button--primary" href="#">Start Book 1</a>
+        </div>
+      </article>
+      <article class="shelf-card">
+        <div class="ph-cover">Kings<small>cover art</small></div>
+        <div>
+          <p class="kicker">Military Sci-Fi · 3 Books · Complete</p>
+          <h3>The War Machine</h3>
+          <p class="desc"><em>Kings</em>, <em>Gods</em>, <em>The God-King</em>. Three-book escalation that does exactly what it says on the hull.</p>
+          <div class="books">
+            <a href="#"><b>01</b>Kings</a><a href="#"><b>02</b>Gods</a><a href="#"><b>03</b>The God-King</a>
+          </div>
+        </div>
+        <div class="shelf-cta">
+          <div class="stat"><b>3</b>books</div>
+          <a class="button button--primary" href="#">Start Book 1</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="pull">
+    <span class="q-stars">★★★★★</span>
+    <blockquote>“The rare military sci-fi that remembers wars are fought by people — and that people break, rally, and break again.”</blockquote>
+    <cite>— Amazon reviewer · The Great Insurrection</cite>
+  </section>
+
+  <section class="section" id="about">
+    <div class="about">
+      <div>
+        <p class="eyebrow">About David</p>
+        <h2>Built for readers who like their rebellions loud.</h2>
+        <p>David Beers writes military science fiction and space opera about rebellion, loyalty, and impossible odds — the people who keep fighting after the empire explains, very confidently, why resistance is inconvenient.</p>
+        <p>Fast campaigns. Hard choices. Big consequences. Enough starship-grade chaos to make peace look suspicious.</p>
+      </div>
+      <div class="about-portrait">Author photo<br/>(drops in here)</div>
+    </div>
+  </section>
+
+  <section class="section" id="newsletter" style="padding-top: 0;">
+    <div class="newsletter">
+      <div>
+        <p class="eyebrow">Reader List</p>
+        <h2>Get the next transmission first.</h2>
+        <p>New releases, box-set alerts, and the occasional dispatch from whichever fleet is making terrible decisions this week. No spam — just the war report.</p>
+      </div>
+      <form class="signup">
+        <input type="email" placeholder="reader@example.com" aria-label="Email address" />
+        <button type="button" class="button button--primary">Join the Reader List</button>
+        <p class="form-note">Unsubscribe anytime. Powered by MailerLite.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 David Beers. All rights reserved.</p>
+  <p>Amazon author page · Contact</p>
+</footer>
+
+</body>
+</html>
