@@ -9,7 +9,7 @@ The July 2026 redesign keeps the established red/ember military-science-fiction 
 - a compact first viewport with one featured complete-series offer;
 - four clear entry paths based on commitment and subgenre;
 - complete reading orders for The Great Insurrection, The Hunter, The War Machine, and The Singularity;
-- a separate archive for Nemesis, The Prophet, Red Rain, and the Luke Titan thrillers;
+- a science-fiction-only back-catalog lane for the six-book Nemesis campaign;
 - local, optimized cover assets instead of Amazon image hotlinks;
 - a responsive keyboard-friendly mobile menu;
 - explicit double-opt-in instructions on both MailerLite signup pages.
