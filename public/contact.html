@@ -3,77 +3,78 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact David Beers | Reader Email</title>
-  <meta name="description" content="Send a reader email to David Beers, author of military science fiction and space opera." />
+  <title>Contact David Beers | Reader Transmission</title>
+  <meta name="description" content="Send a reader message to David Beers, author of military science fiction and space opera." />
   <link rel="canonical" href="https://www.readdavidbeers.com/contact.html" />
   <meta property="og:title" content="Contact David Beers" />
-  <meta property="og:description" content="Send a reader email to David Beers." />
+  <meta property="og:description" content="Send a reader transmission to David Beers." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.readdavidbeers.com/contact.html" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="theme-color" content="#0b0706" />
+  <meta property="og:image" content="https://www.readdavidbeers.com/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#07090c" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@600;700;800&family=Libre+Baskerville:ital@0;1&family=Manrope:wght@500;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css" />
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css?v=command-briefing" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header" aria-label="Primary navigation">
-    <a class="brand" href="/" aria-label="David Beers home">David Beers</a>
-    <nav>
-      <a href="/#start">Start here</a>
-      <a href="/#series">Series</a>
-      <a href="/#about">About</a>
-      <a href="/#newsletter">Updates</a>
-      <a href="/contact.html" aria-current="page">Contact</a>
+  <header class="site-header compact-header" data-scroll-header>
+    <a class="brand" href="/" aria-label="David Beers home">
+      <span class="brand-mark">DB</span>
+      <span><strong>David Beers</strong><small>Military science fiction</small></span>
+    </a>
+    <nav class="site-nav" aria-label="Contact page navigation">
+      <a href="/">Author site</a>
+      <a href="/#campaigns">Reading order</a>
+      <a href="/#newsletter">Reader dispatch</a>
     </nav>
   </header>
 
-  <main id="main">
-    <section class="contact-hero" aria-labelledby="contact-title">
-      <div class="contact-hero__copy">
-        <p class="eyebrow">Reader contact</p>
-        <h1 id="contact-title">Send David a note from the front.</h1>
-        <p class="dek">Questions, reader mail, favorite war crimes committed by fictional empires — send them here. This form sends your message directly to David without exposing the inbox to spam bots.</p>
+  <main class="subpage-main" id="main">
+    <section class="contact-shell" aria-labelledby="contact-title">
+      <div class="subpage-copy">
+        <p class="eyebrow"><span>Open channel</span> Reader contact</p>
+        <h1 id="contact-title">Send a transmission.</h1>
+        <p>Questions, reader mail, favorite characters, or the fictional empire you most enjoyed watching collapse—send it here.</p>
+        <div class="reader-assurance" aria-label="Contact information">
+          <span>Messages go directly to David</span>
+          <span>Protected by Cloudflare Turnstile</span>
+          <span>Replies come from a real human</span>
+        </div>
       </div>
 
-      <form class="contact-card" id="contact-form" data-contact-form aria-label="Email David Beers">
+      <form class="contact-card" data-contact-form aria-label="Email David Beers">
+        <p class="system-label">Reader channel // DB-CONTACT</p>
         <input type="hidden" name="brand" value="David Beers" />
-        <label class="contact-card__trap" aria-hidden="true" tabindex="-1">
-          <span>Company</span>
-          <input name="company" type="text" autocomplete="off" tabindex="-1" />
-        </label>
-        <label>
-          <span>Your name</span>
-          <input name="name" type="text" autocomplete="name" placeholder="Commander Shepard" required />
-        </label>
-        <label>
-          <span>Your email</span>
-          <input name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
-        </label>
-        <label>
-          <span>Subject</span>
-          <input name="subject" type="text" value="Reader message for David Beers" />
-        </label>
-        <label>
-          <span>Message</span>
-          <textarea name="message" rows="7" placeholder="Tell David what you want him to know." required></textarea>
-        </label>
+        <label class="contact-trap" aria-hidden="true" tabindex="-1"><span>Company</span><input name="company" type="text" autocomplete="off" tabindex="-1" /></label>
+        <label><span>Your name</span><input name="name" type="text" autocomplete="name" placeholder="Commander Shepard" required /></label>
+        <label><span>Your email</span><input name="email" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
+        <label><span>Subject</span><input name="subject" type="text" value="Reader message for David Beers" /></label>
+        <label><span>Message</span><textarea name="message" rows="7" placeholder="Tell David what you want him to know." required></textarea></label>
         <div class="cf-turnstile" data-sitekey="0x4AAAAAADInfxBcLDhLz5x-"></div>
-        <button class="button button--primary" type="submit">Send message</button>
-        <p class="contact-card__note" data-contact-status role="status">Protected by Cloudflare Turnstile. If the form gets weird, write directly to <a href="mailto:david@imperiumdominion.org">david@imperiumdominion.org</a>.</p>
+        <button class="button button-primary" type="submit">Send transmission</button>
+        <p class="contact-note" data-contact-status role="status">If the channel gets weird, write directly to <a href="mailto:david@imperiumdominion.org">david@imperiumdominion.org</a>.</p>
       </form>
     </section>
   </main>
 
-  <footer>
-    <p>© <span id="year"></span> David Beers. All rights reserved.</p>
-    <p><a href="/">Home</a> · <a href="https://www.amazon.com/author/davidbeersauthor">Amazon author page</a></p>
+  <footer class="site-footer">
+    <div><strong>David Beers</strong><span>Military science fiction · Space opera · Thrillers</span></div>
+    <nav aria-label="Footer navigation"><a href="/">Author site</a><a href="https://www.amazon.com/author/davidbeersauthor" target="_blank" rel="noreferrer">Amazon books</a></nav>
+    <p>© <span data-year></span> David Beers. All rights reserved.</p>
   </footer>
 
-  <script src="/script.js"></script>
+  <script>
+    if (!['localhost', '127.0.0.1'].includes(location.hostname)) {
+      const turnstileScript = document.createElement('script');
+      turnstileScript.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+      turnstileScript.async = true;
+      turnstileScript.defer = true;
+      document.head.appendChild(turnstileScript);
+    }
+  </script>
+  <script src="/script.js?v=command-briefing"></script>
 </body>
 </html>

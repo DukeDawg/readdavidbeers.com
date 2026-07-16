@@ -2,6 +2,20 @@
 
 Official David Beers author site. Static-first build for Cloudflare Pages.
 
+## Command-briefing redesign
+
+The July 2026 redesign keeps the established red/ember military-science-fiction identity but reorganizes the site around reader decisions:
+
+- a compact first viewport with one featured complete-series offer;
+- four clear entry paths based on commitment and subgenre;
+- complete reading orders for The Great Insurrection, The Hunter, The War Machine, and The Singularity;
+- a separate archive for Nemesis, The Prophet, Red Rain, and the Luke Titan thrillers;
+- local, optimized cover assets instead of Amazon image hotlinks;
+- a responsive keyboard-friendly mobile menu;
+- explicit double-opt-in instructions on both MailerLite signup pages.
+
+Run `python3 verify_site.py` before publishing.
+
 ## Cloudflare Pages settings
 
 - Framework preset: None
@@ -17,6 +31,8 @@ The homepage reader-list signup form posts directly to MailerLite's embedded web
 - Account path: `2307208`
 - Form ID: `187925613909116238`
 - Action: `https://assets.mailerlite.com/jsonp/2307208/forms/187925613909116238/subscribe`
+- MailerLite group: `David Beers Website` (`187925636851958809`)
+- Consent mode: double opt-in
 
 The public form intentionally keeps only the email field and MailerLite's required hidden fields: `ml-submit=1` and `anticsrf=true`. The site's own `script.js` submits the form with `fetch()`, displays MailerLite validation errors inline, and calls `ml_webform_success_41523129()` on success so the success state can use the site's own styling instead of MailerLite's bulky default embed CSS.
 
@@ -32,6 +48,8 @@ It uses the separate MailerLite form David supplied for readers coming from the 
 - Account path: `2307208`
 - Form ID: `188109623780181441`
 - Action: `https://assets.mailerlite.com/jsonp/2307208/forms/188109623780181441/subscribe`
+- MailerLite group: `David Beers Website` (`187925636851958809`)
+- Consent mode: double opt-in
 
 The page is static at `public/readers/index.html` and uses the same direct-submit handler in `public/script.js`, with `data-mailerlite-success="ml_webform_success_41626330"` selecting the page-specific success state.
 
@@ -47,7 +65,7 @@ Required Cloudflare Pages environment variables/secrets:
 - `CONTACT_FROM_EMAIL` — verified Resend sender, e.g. `Reader Mail <reader-mail@readdavidbeers.com>`
 - `CONTACT_SITE_NAME` — optional label used in the email subject/body
 
-Also replace `REPLACE_WITH_TURNSTILE_SITE_KEY` in the public HTML with the Turnstile site key for this domain.
+The public Turnstile site key is already present in `public/contact.html`; keep the secret key only in Cloudflare Pages.
 
 Cloudflare Pages build remains static-first:
 

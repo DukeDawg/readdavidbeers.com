@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join David Beers' Reader List</title>
+  <meta name="description" content="Thanks for reading. Join David Beers' reader list for new releases, series updates, and sci-fi reader alerts." />
+  <link rel="canonical" href="https://www.readdavidbeers.com/readers/" />
+  <meta property="og:title" content="Join David Beers' Reader List" />
+  <meta property="og:description" content="Get new-release alerts and series updates from David Beers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.readdavidbeers.com/readers/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="theme-color" content="#0b0706" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@600;700;800&family=Libre+Baskerville:ital@0;1&family=Manrope:wght@500;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css?v=backmatter-signup" />
+</head>
+<body class="reader-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header compact-header" aria-label="Reader page navigation">
+    <a class="brand" href="/" aria-label="David Beers home">David Beers</a>
+    <nav>
+      <a href="/">Author site</a>
+      <a href="https://www.amazon.com/author/davidbeersauthor">Amazon</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="reader-landing" aria-labelledby="reader-title">
+      <div class="reader-landing__copy">
+        <p class="eyebrow">Thanks for reading</p>
+        <h1 id="reader-title">Join David Beers' reader list.</h1>
+        <p class="dek">Get new-release alerts, series updates, box-set news, and the next transmission from whatever rebellion has decided tyranny looks punchable this week.</p>
+        <p class="reader-note">No spam. No daily nonsense. Just reader updates when there is something worth sending.</p>
+      </div>
+
+      <div id="mlb2-41626330" class="reader-landing__card mailerlite-signup ml-form-embedContainer ml-subscribe-form ml-subscribe-form-41626330">
+        <p class="reader-card-label">Reader list</p>
+        <form class="signup-form ml-block-form row-form" action="https://assets.mailerlite.com/jsonp/2307208/forms/188109623780181441/subscribe" data-mailerlite-form data-mailerlite-success="ml_webform_success_41626330" method="post">
+          <label>
+            <span>Email address</span>
+            <input aria-label="email" aria-required="true" type="email" name="fields[email]" autocomplete="email" placeholder="reader@example.com" required />
+          </label>
+          <input type="hidden" name="ml-submit" value="1" />
+          <button type="submit" class="button button--primary">Join the reader list</button>
+          <input type="hidden" name="anticsrf" value="true" />
+          <p class="form-note" data-mailerlite-status role="status">Powered by MailerLite.</p>
+        </form>
+        <div class="signup-form ml-form-successBody row-success" hidden>
+          <h3>You're on the list.</h3>
+          <p class="form-note">David will send the next transmission when it is ready.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> David Beers. All rights reserved.</p>
+    <p><a href="/">Author site</a> · <a href="https://www.amazon.com/author/davidbeersauthor">Amazon author page</a></p>
+  </footer>
+
+  <script>
+    function ml_webform_success_41626330() {
+      const container = document.querySelector('.ml-subscribe-form-41626330');
+      if (!container) return;
+
+      const success = container.querySelector('.row-success');
+      const form = container.querySelector('.row-form');
+
+      if (success) success.hidden = false;
+      if (form) form.hidden = true;
+    }
+  </script>
+  <script>
+    fetch("https://assets.mailerlite.com/jsonp/2307208/forms/188109623780181441/takel").catch(() => {});
+  </script>
+  <script src="/script.js?v=backmatter-signup"></script>
+</body>
+</html>

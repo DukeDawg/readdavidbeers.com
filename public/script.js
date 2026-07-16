@@ -1,8 +1,36 @@
-const year = document.querySelector('#year');
+const year = document.querySelector('[data-year]');
 if (year) year.textContent = new Date().getFullYear();
 
+const header = document.querySelector('[data-scroll-header]');
+const menuToggle = document.querySelector('[data-menu-toggle]');
+const siteNav = document.querySelector('[data-site-nav]');
 const contactForm = document.querySelector('[data-contact-form]');
 const mailerLiteForms = document.querySelectorAll('[data-mailerlite-form]');
+
+if (header) {
+  const syncHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 18);
+  syncHeader();
+  window.addEventListener('scroll', syncHeader, { passive: true });
+}
+
+if (menuToggle && siteNav) {
+  const closeMenu = () => {
+    menuToggle.setAttribute('aria-expanded', 'false');
+    siteNav.classList.remove('is-open');
+  };
+
+  menuToggle.addEventListener('click', () => {
+    const opening = menuToggle.getAttribute('aria-expanded') !== 'true';
+    menuToggle.setAttribute('aria-expanded', String(opening));
+    siteNav.classList.toggle('is-open', opening);
+  });
+
+  siteNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMenu();
+  });
+}
+
 if (contactForm) {
   const status = contactForm.querySelector('[data-contact-status]');
   const button = contactForm.querySelector('button[type="submit"]');
@@ -102,7 +130,7 @@ if (!reduceMotion) {
     }
   }, { threshold: 0.14 });
 
-  document.querySelectorAll('.feature-card, .mini-card, .series-card, .about-panel, .newsletter, .contact-card').forEach((el) => {
+  document.querySelectorAll('.path-card, .campaign-file, .archive-card, .about-frame, .newsletter-shell, .reader-card, .contact-card').forEach((el) => {
     el.classList.add('reveal');
     observer.observe(el);
   });
