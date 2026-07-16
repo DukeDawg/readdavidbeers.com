@@ -3,80 +3,82 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Join David Beers' Reader List</title>
-  <meta name="description" content="Thanks for reading. Join David Beers' reader list for new releases, series updates, and sci-fi reader alerts." />
+  <title>Join David Beers' Reader Dispatch</title>
+  <meta name="description" content="Thanks for reading. Join David Beers' reader dispatch for new releases, complete-series offers, and sci-fi updates." />
   <link rel="canonical" href="https://www.readdavidbeers.com/readers/" />
-  <meta property="og:title" content="Join David Beers' Reader List" />
-  <meta property="og:description" content="Get new-release alerts and series updates from David Beers." />
+  <meta property="og:title" content="Join David Beers' Reader Dispatch" />
+  <meta property="og:description" content="New releases, complete-series offers, and the next transmission from David Beers." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.readdavidbeers.com/readers/" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="theme-color" content="#0b0706" />
+  <meta property="og:image" content="https://www.readdavidbeers.com/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#07090c" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@600;700;800&family=Libre+Baskerville:ital@0;1&family=Manrope:wght@500;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=backmatter-signup" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css?v=command-briefing" />
 </head>
-<body class="reader-page">
+<body>
   <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header compact-header" aria-label="Reader page navigation">
-    <a class="brand" href="/" aria-label="David Beers home">David Beers</a>
-    <nav>
+  <header class="site-header compact-header" data-scroll-header>
+    <a class="brand" href="/" aria-label="David Beers home">
+      <span class="brand-mark">DB</span>
+      <span><strong>David Beers</strong><small>Military science fiction</small></span>
+    </a>
+    <nav class="site-nav" aria-label="Reader page navigation">
       <a href="/">Author site</a>
-      <a href="https://www.amazon.com/author/davidbeersauthor">Amazon</a>
+      <a href="https://www.amazon.com/author/davidbeersauthor" target="_blank" rel="noreferrer">Amazon books</a>
     </nav>
   </header>
 
-  <main id="main">
-    <section class="reader-landing" aria-labelledby="reader-title">
-      <div class="reader-landing__copy">
-        <p class="eyebrow">Thanks for reading</p>
-        <h1 id="reader-title">Join David Beers' reader list.</h1>
-        <p class="dek">Get new-release alerts, series updates, box-set news, and the next transmission from whatever rebellion has decided tyranny looks punchable this week.</p>
-        <p class="reader-note">No spam. No daily nonsense. Just reader updates when there is something worth sending.</p>
+  <main class="subpage-main" id="main">
+    <section class="reader-hero" aria-labelledby="reader-title">
+      <div class="subpage-copy">
+        <p class="eyebrow"><span>Back-of-book channel</span> Thanks for reading</p>
+        <h1 id="reader-title">Stay with the fleet.</h1>
+        <p>You finished the book. Now get the next release, complete-series offers, and the occasional transmission from David before the next campaign begins.</p>
+        <div class="reader-assurance" aria-label="Reader-list promises">
+          <span>Only updates worth sending</span>
+          <span>Unsubscribe whenever you want</span>
+          <span>Confirmation email required</span>
+        </div>
       </div>
 
-      <div id="mlb2-41626330" class="reader-landing__card mailerlite-signup ml-form-embedContainer ml-subscribe-form ml-subscribe-form-41626330">
-        <p class="reader-card-label">Reader list</p>
+      <div id="mlb2-41626330" class="reader-card mailerlite-signup ml-form-embedContainer ml-subscribe-form ml-subscribe-form-41626330">
+        <p class="system-label">Reader dispatch // Enrollment</p>
         <form class="signup-form ml-block-form row-form" action="https://assets.mailerlite.com/jsonp/2307208/forms/188109623780181441/subscribe" data-mailerlite-form data-mailerlite-success="ml_webform_success_41626330" method="post">
-          <label>
-            <span>Email address</span>
-            <input aria-label="email" aria-required="true" type="email" name="fields[email]" autocomplete="email" placeholder="reader@example.com" required />
-          </label>
+          <label><span>Email address</span><input aria-label="email" aria-required="true" type="email" name="fields[email]" autocomplete="email" placeholder="reader@example.com" required /></label>
           <input type="hidden" name="ml-submit" value="1" />
-          <button type="submit" class="button button--primary">Join the reader list</button>
+          <button class="button button-primary" type="submit">Join the reader dispatch</button>
           <input type="hidden" name="anticsrf" value="true" />
-          <p class="form-note" data-mailerlite-status role="status">Powered by MailerLite.</p>
+          <p class="form-note" data-mailerlite-status role="status">Powered by MailerLite · Double opt-in enabled.</p>
         </form>
-        <div class="signup-form ml-form-successBody row-success" hidden>
-          <h3>You're on the list.</h3>
-          <p class="form-note">David will send the next transmission when it is ready.</p>
+        <div class="signup-success ml-form-successBody row-success" hidden>
+          <p class="system-label">Transmission received</p>
+          <h3>One more step.</h3>
+          <p>Check your inbox and click MailerLite’s confirmation link to complete your signup.</p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>© <span id="year"></span> David Beers. All rights reserved.</p>
-    <p><a href="/">Author site</a> · <a href="https://www.amazon.com/author/davidbeersauthor">Amazon author page</a></p>
+  <footer class="site-footer">
+    <div><strong>David Beers</strong><span>Military science fiction · Space opera · Thrillers</span></div>
+    <nav aria-label="Footer navigation"><a href="/">Author site</a><a href="https://www.amazon.com/author/davidbeersauthor" target="_blank" rel="noreferrer">Amazon books</a></nav>
+    <p>© <span data-year></span> David Beers. All rights reserved.</p>
   </footer>
 
   <script>
     function ml_webform_success_41626330() {
       const container = document.querySelector('.ml-subscribe-form-41626330');
       if (!container) return;
-
       const success = container.querySelector('.row-success');
       const form = container.querySelector('.row-form');
-
       if (success) success.hidden = false;
       if (form) form.hidden = true;
     }
   </script>
-  <script>
-    fetch("https://assets.mailerlite.com/jsonp/2307208/forms/188109623780181441/takel").catch(() => {});
-  </script>
-  <script src="/script.js?v=backmatter-signup"></script>
+  <script>fetch("https://assets.mailerlite.com/jsonp/2307208/forms/188109623780181441/takel").catch(() => {});</script>
+  <script src="/script.js?v=command-briefing"></script>
 </body>
 </html>
