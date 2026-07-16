@@ -24,6 +24,7 @@ readers = read("public/readers/index.html")
 contact = read("public/contact.html")
 styles = read("public/styles.css")
 script = read("public/script.js")
+redirects = read("public/_redirects")
 contact_function = read("functions/api/contact.js")
 
 for name, source in [("home", index), ("readers", readers), ("contact", contact)]:
@@ -68,6 +69,15 @@ public_copy = index + readers + contact
 leaked_terms = [term for term in forbidden_brand_terms if term.lower() in public_copy.lower()]
 if leaked_terms:
     raise SystemExit(f"Non-science-fiction brand terms leaked into public pages: {leaked_terms}")
+
+retired_cover_redirects = [
+    "/images/prophet-birth.jpg /#archive 301",
+    "/images/red-rain.jpg /#archive 301",
+    "/images/luke-titan.jpg /#archive 301",
+]
+missing_redirects = [rule for rule in retired_cover_redirects if rule not in redirects]
+if missing_redirects:
+    raise SystemExit(f"Retired non-science-fiction covers are missing redirects: {missing_redirects}")
 
 homepage_signup = [
     "mlb2-41523129",
