@@ -41,7 +41,8 @@ home_terms = [
     "The Hunter",
     "The War Machine",
     "The Singularity",
-    "The darker archive.",
+    "Before the current warfronts.",
+    "Nemesis",
     "Get the next transmission.",
     "data-menu-toggle",
     "data-site-nav",
@@ -61,6 +62,12 @@ core_titles = [
 missing_titles = [title for title in core_titles if title not in index]
 if missing_titles:
     raise SystemExit(f"Reading-order titles missing: {missing_titles}")
+
+forbidden_brand_terms = ["thriller", "horror", "Luke Titan", "The Prophet", "Red Rain"]
+public_copy = index + readers + contact
+leaked_terms = [term for term in forbidden_brand_terms if term.lower() in public_copy.lower()]
+if leaked_terms:
+    raise SystemExit(f"Non-science-fiction brand terms leaked into public pages: {leaked_terms}")
 
 homepage_signup = [
     "mlb2-41523129",
