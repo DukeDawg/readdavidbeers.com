@@ -130,7 +130,7 @@ if (!reduceMotion) {
     }
   }, { threshold: 0.14 });
 
-  document.querySelectorAll('.path-card, .campaign-file, .archive-card, .about-frame, .newsletter-shell, .reader-card, .contact-card').forEach((el) => {
+  document.querySelectorAll('.path-card, .campaign-file, .archive-feature, .about-frame, .newsletter-shell, .reader-card, .contact-card').forEach((el) => {
     el.classList.add('reveal');
     observer.observe(el);
   });
