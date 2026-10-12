@@ -4,6 +4,11 @@
   "private": true,
   "scripts": {
     "check": "python3 verify_site.py",
-    "serve": "python3 -m http.server 4173 --directory public"
+    "serve": "python3 -m http.server 4173 --directory public",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.111.0"
   }
 }
