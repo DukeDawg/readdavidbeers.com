@@ -123,7 +123,7 @@ if missing_contact:
 if "onRequestPost" not in contact_function or "TURNSTILE_SECRET_KEY" not in contact_function or "RESEND_API_KEY" not in contact_function:
     raise SystemExit("Contact backend wiring is incomplete")
 
-asset_refs = set(re.findall(r'(?:src|href)="(/[^"?#]+\.(?:jpg|png|css|js))', index + readers + contact))
+asset_refs = set(re.findall(r'(?:src|href)="(/[^"?#]+\.(?:jpg|png|webp|css|js))', index + readers + contact))
 missing_assets = [asset for asset in sorted(asset_refs) if not (PUBLIC / asset.lstrip("/")).exists()]
 if missing_assets:
     raise SystemExit(f"Missing local assets: {missing_assets}")
